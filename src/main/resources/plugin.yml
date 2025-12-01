@@ -9,3 +9,5 @@ description: Invisible frames. What more do I need to say.
 permissions:
   invisibleframes.toggle:
     default: true
+
+folia-supported: true
