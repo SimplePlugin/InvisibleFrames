@@ -1,0 +1,7 @@
+version: '0.0.0-SNAPSHOT'
+name: InvisibleFrames
+main: me.truedarklord.invisibleFrames.InvisibleFrames
+api-version: '1.20'
+prefix: InvisibleFrames
+authors: [ TrueDarkLord ]
+description: Invisible frames. What more do I need to say.
