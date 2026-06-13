@@ -4,6 +4,7 @@ import me.truedarklord.invisibleFrames.InvisibleFrames;
 import org.bukkit.entity.ItemFrame;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 
 import org.bukkit.event.player.PlayerInteractEntityEvent;
@@ -15,7 +16,7 @@ public class ClickListener implements Listener {
         plugin.getServer().getPluginManager().registerEvents(this, plugin);
     }
 
-    @EventHandler
+    @EventHandler(priority =  EventPriority.HIGHEST, ignoreCancelled = true)
     public void onClick(PlayerInteractEntityEvent event) {
         Player player = event.getPlayer();
 
@@ -24,6 +25,8 @@ public class ClickListener implements Listener {
         if (!(event.getRightClicked() instanceof ItemFrame frame)) return;
 
         if (!player.hasPermission("invisibleframes.toggle")) return;
+
+        event.setCancelled(true);
 
         frame.setVisible(!frame.isVisible());
     }
